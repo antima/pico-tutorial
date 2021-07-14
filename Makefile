@@ -1,4 +1,14 @@
+ifdef OS
+	CP = copy
+	InPath = ".\build\led_pico.uf2"
+	OutPath = "D:"
+else
+	CP = cp
+	InPath = "build/led_pico.uf2"
+	OutPath = "/media/${USER}/RPI-RP2"
+endif
+
 flash:
-	cp build/led_pico.uf2 /media/${USER}/RPI-RP2
+	$(CP) $(InPath) $(OutPath)
 
 .PHONY : flash
