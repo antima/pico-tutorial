@@ -9,6 +9,6 @@ set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 add_executable(led_pico main.c)
 
-target_link_libraries(led_pico pico_stdlib)
+target_link_libraries(led_pico pico_stdlib hardware_pwm)
 
 pico_add_extra_outputs(led_pico)
