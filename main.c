@@ -5,7 +5,6 @@ int main() {
 	const uint led = 0;
 	const uint pir_sensor = 15;
 
-
 	gpio_init(led);
 	gpio_init(PICO_DEFAULT_LED_PIN);
 	gpio_init(pir_sensor);
@@ -15,8 +14,6 @@ int main() {
 	gpio_set_dir(pir_sensor, GPIO_IN);
 
 	while(1) {
-		//serial based fsm with coommands and actuation or pir rid 
-		// everything in serial is in for loop everything else interupts?
 		pir_data = gpio_get(pir_sensor);
 		gpio_put(led, pir_data);
 		gpio_put(PICO_DEFAULT_LED_PIN, pir_data);
